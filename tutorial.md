@@ -398,8 +398,9 @@ $ cargo run
 $ 
 {{</codecaption>}}
 
-Note that we don't need to pass the name of the project; Rust will infer that
-for us, by executing the appropriate `.exe` file based on the release target.
+Note that we don't need to pass the name of the project. Rust will infer that
+for us, by running the appropriate executable. On non-Windows systems, the path
+may look more like `target/debug/tinymd`.
 
 If you see "Hello, world!" in your terminal, then congratulations: you have 
 built your first Rust program!
