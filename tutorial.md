@@ -59,7 +59,7 @@ My name is Jesse, and this is an introductory Rust tutorial for developers who
 like learning by doing.
 
 The purpose of this tutorial is to develop intuition about 
-toolbuilding in Rust--specifically, to learn how to think and build in Rust. 
+toolbuilding in Rust—specifically, to learn how to think and build in Rust. 
 
 Our goal is to produce a very basic command line compiler that will turn a 
 basic Markdown document containing headings and paragraphs into an html file.
@@ -91,7 +91,7 @@ new language had into my existing framework for what a language should do and
 how it should feel. Rust required, for the most part, a clean slate. 
 
 As a tutorial author, I wanted to write an introductory tutorial on Rust to get 
-developers in other languages up and running as fast as possible--but I didn't 
+developers in other languages up and running as fast as possible—but I didn't 
 want to be like every other Rust tutorial and just dive into the nitty gritty 
 parts of it that, although foundational, were off-putting to anyone trying to 
 learn a new language as unique as Rust.
@@ -221,8 +221,8 @@ after "Hello, world!" to justify sticking around. In my humble opinion, this is
 because most Rust tutorials aren't teaching people how fun Rust is for building 
 tools, and instead focusing too much on how idiosyncratic the unique features 
 of Rust are. Those tutorials are still important, but I think other 
-tutorials--ones that focus on building something, even if it's not that 
-complicated--are important, too, and serve to compliment the still young (as of 
+tutorials—ones that focus on building something, even if it's not that 
+complicated—are important, too, and serve to compliment the still young (as of 
 2019) ecosystem of Rust tutorials online.
 
 {{% /deepdive %}}
@@ -275,7 +275,7 @@ We will start by creating a folder to keep track of all our tutorial projects.
 In my tutorials, you will often see `C:\RustTutorials` as the root folder of all 
 our projects. Go ahead and name yours whatever you want.
 
-For this tutorial, we are creating a Markdown compiler called **TinyMD**--which 
+For this tutorial, we are creating a Markdown compiler called **TinyMD**—which 
 is also the name of my rejected Netflix show about a sentient spider that goes 
 to medical school. You don't have to make a new directory; we're going to do that 
 with Rust's `Cargo` toolchain, the package manager and project building tool 
@@ -364,8 +364,8 @@ $
 {{</codecaption>}}
 
 You can see that the `build` command first compiles the project before 
-building it. The other stuff there--`dev [unoptimized + 
-debuginfo]`--is telling us that we have compiled and built this project for dev
+building it. The other stuff there—`dev [unoptimized + 
+debuginfo]`—is telling us that we have compiled and built this project for dev
 purposes only. The code is not optimized and there are debug symbols present
 that we would normally not keep in a release version. The `dev` target is the
 default target for the `cargo build` command, and is equivalent to a Debug
@@ -428,7 +428,7 @@ markdown compiler.
 
 The Hello World example code provided gives us all we need to know to start
 customizing our project. By the end of this chapter, executing our code without
-arguments will output a banner--a short block of text that includes the 
+arguments will output a banner—a short block of text that includes the 
 program's name, the author, a brief description, and usage examples. 
 
 ## Creating a function in Rust
@@ -476,7 +476,7 @@ Hello, world!
 ```
 
 To save space, that's how I'll be compiling, building, and running the code as
-we make changes to it--so don't panic when you see the `-q` flag.
+we make changes to it—so don't panic when you see the `-q` flag.
 
 Let's go ahead and replace the Hello World line in the main function body with
 a call to `usage()`: 
@@ -550,17 +550,17 @@ fn get_version() -> u16 {
 
 In both examples above, the functions will evaluate to the number 1000. This is 
 because Rust is considered an expression-based language (like Ruby!). In an 
-expression-based language, everything is an expression--and expressions evaluate
+expression-based language, everything is an expression—and expressions evaluate
 to values. That means that a block of code, being an expression, evaluates to
 a value. Since a function is a block of code, functions evaluate to a value,
 too. 
 
 Notice that we only need the semi-colon when we use the `return` keyword; 
 the number 1001 by itself is the value that the block evaluates to, while the 
-`return 1000;` is a statement--and statements end with a semicolon.
+`return 1000;` is a statement—and statements end with a semicolon.
 
 The accepted way in the Rust community (and in most expression-based languages) 
-is to only use the `return` keyword for early returns--that is, for when the 
+is to only use the `return` keyword for early returns—that is, for when the 
 last statement in a particular block may not be the only value that the block
 can evaluate to. For example, if you wanted to print some output based on the
 version number, you would do something like this:
@@ -706,7 +706,7 @@ operations in Rust.
 {{<objectives chapter="3">}}
 
 Our tiny markdown compiler is only just being born. We've got a project setup, 
-and if we run the program we are able to output a *banner*--a block of helpful 
+and if we run the program we are able to output a *banner*—a block of helpful 
 text that usually says what the program is, who wrote it, and how to use it. We 
 have wrapped up this banner in the `usage()` function. By the end of the last 
 chapter, we were outputting the version of our program. 
@@ -721,7 +721,7 @@ many languages you might already be used to: *ownership*.
 
 Most people think of strings as the content between a pair of quotes (`"`) and, 
 well, nothing really else beyond that. Rust forces us to become very familiar 
-with how a string is understood by a computer--as a collection of bytes that, in 
+with how a string is understood by a computer—as a collection of bytes that, in 
 Rust's case, are guaranteed to be valid UTF-8. That being said, every language 
 has a way to implement a collection of bytes in one of two ways: *heap-allocated* 
 strings, which are dynamically created at runtime and during the application's 
@@ -756,13 +756,13 @@ the inner content, then the closing tag. Using a string slice wouldn't make
 sense here since the value of the `String` will change as we add ("push") data 
 into it. 
 
-Think of a `&str` as a window into another string--even if that string is not 
+Think of a `&str` as a window into another string—even if that string is not 
 created by you, but by the application instead. String slices that point to a 
 string that we declare are technically considered `static` string slices, since 
 they point to strings in memory that are created on the stack. 
 
 Let's see how both of these string types can be used effectively by modifying 
-our `the_version` variable to be a `&str`--and while we're at it, let's change 
+our `the_version` variable to be a `&str`—and while we're at it, let's change 
 the version of our markdown compiler to be a more traditional early prototype 
 version (`0.1`) instead of `1000`:
 
@@ -778,8 +778,8 @@ Here we have turned `the_version` into a string slice (`&str`). Rust is going to
 see the `"0.1"` and know to compile that value as a static string in the program, 
 and then has `the_version` borrow that value. The reason we say it *borrows* the 
 value there is because technically it's not the *owner* of the buffer where `"0.1"` 
-lives--the application is. (Anytime a string literal like `"0.1"` is created at 
-compile time, it is created as a *static string slice*--it exists in the binary 
+lives—the application is. (Anytime a string literal like `"0.1"` is created at 
+compile time, it is created as a *static string slice*—it exists in the binary 
 code that makes up the executable and cannot be changed.)
 
 Since `the_version` is going to borrow the value of a string literal, how might 
@@ -865,7 +865,7 @@ we see in the manifest file as parts of the banner of our application. Neat!
 
 To do this, we will use the `env!()` macro I mentioned earlier. Remember that 
 macros in Rust are, as far as we are concerned, basically the same as 
-functions--except a macro has an exclamation point after it's name to denote 
+functions—except a macro has an exclamation point after it's name to denote 
 that it is a macro. The `env!()` macro takes one argument: a string 
 key corresponding to the variable we want. 
 
@@ -923,7 +923,7 @@ other words, anytime we would need to print out the tool's banner, we should be
 able to do it with a single function call: `usage()`. To do that, we would need 
 to move the version variable into the `usage()` function. While we're at it, 
 let's go ahead and encapsulate the work of getting the version out into its 
-own function--and replacing `get_version()` with something a little more helpful. 
+own function—and replacing `get_version()` with something a little more helpful. 
 
 ## Returning a string variable in Rust
 
@@ -944,9 +944,9 @@ fn get_version() -> String {
 ```
 
 Changing the return value to a `String` is easy enough, but I want to take this 
-function a different way. Instead of just getting our version--which would mean 
+function a different way. Instead of just getting our version—which would mean 
 we would create separate functions for all of the other manifest values we want 
-to retrieve--let's replace `get_version()` with a function that returns more 
+to retrieve—let's replace `get_version()` with a function that returns more 
 than just one value from the manifest file. 
 
 When the `usage()` function prints the banner, I want it to print something like 
@@ -1154,7 +1154,7 @@ fn main() {
 {{</codecaption>}}
 
 We're almost finished mapping out the main functions of our tool. The last one 
-we need--and the one we will spend the rest of this chapter on--goes right at the 
+we need—and the one we will spend the rest of this chapter on—goes right at the 
 top and will be called `get_title()`. This one will be different because it is 
 going to return a `String`:
 
@@ -1193,9 +1193,9 @@ fn get_title() -> String {
 ```
 
 Here's something we haven't seen before: a `String` variable can be created *from* 
-another string--even if that string is a string slice. Here we are creating 
+another string—even if that string is a string slice. Here we are creating 
 a mutable variable `the_title` from the string returned by the call to `env!()`, 
-which is grabbing the string value associated with the key `CARGO_PKG_NAME`--which 
+which is grabbing the string value associated with the key `CARGO_PKG_NAME`—which 
 itself is associated with the manifest file's `title` key. Neat!
 
 What is the value of `the_title` right now? 
@@ -1239,7 +1239,7 @@ fn get_title() -> String {
 ```
 
 As you can see, a `String` can be instantiated by building one *from* another 
-source--like, in this case, the return value of the `env!()` macro. You'll also 
+source—like, in this case, the return value of the `env!()` macro. You'll also 
 note that the `String::from`` bears resemblance to method calling calling from 
 other languages. 
 
@@ -1382,7 +1382,7 @@ can we use to build the project *and* run it *quietly* all at once?
 
 Recall that Cargo's `run` command will automatically trigger a `build` if it 
 detects that source files have been changed since the last time the program was 
-built. We can also pass the `-q` flag to keep the output quiet--that is, not 
+built. We can also pass the `-q` flag to keep the output quiet—that is, not 
 show all the verbose output that comes with a bare `cargo build` command. 
 
 ```shell
@@ -1512,7 +1512,7 @@ tool.
 
 The idea behind parsing command line arguments is fairly straight forward. Given 
 an argument, perform some operation based on what that argument is. In the case 
-of our Markdown compiler, we really only care about one argument--and we hope 
+of our Markdown compiler, we really only care about one argument—and we hope 
 that it's the name of a Markdown file. 
 
 The way Rust parses arguments is to collect them all up and store them in an 
@@ -1540,8 +1540,8 @@ arguments, then collect them into a single, iterable object.
 A vector in Rust is a type denoted by the keyword `Vec`, followed by `<` and `>`, 
 with the variable type enclosed in the brackets. 
 
-Since we want to create a `String` vector--where each argument given will be a 
-different element of the vector--we will declare it as a type `Vec<String>`.
+Since we want to create a `String` vector—where each argument given will be a 
+different element of the vector—we will declare it as a type `Vec<String>`.
 
 Let's create a variable called `args` that is a `String` vector, and assign 
 it the value of our collected arguments:
@@ -1555,11 +1555,11 @@ You might recognize this chaining-style syntax from other languages. Rust has
 a lot of features behind the scenes that make it feel like a higher-level 
 language, while at the same time requiring a closer-to-the-metal mindset. Here, 
 the expression `std::env::args()` exposes an evironment variable of type 
-`std::env::Args`, and then *collects* the arguments into a vector--to be used 
+`std::env::Args`, and then *collects* the arguments into a vector—to be used 
 as the return value. 
 
 The `.collect()` part of this takes the arguments and converts them into a 
-`std::iter::Iterator<std::string::String>`--which, as you can see, is a generic 
+`std::iter::Iterator<std::string::String>`—which, as you can see, is a generic 
 `Iterator` type (from which a `Vec` is derived) of type `std::string::String`. If 
 you guessed that `Vec<std::string::String>` and `Vec<String>` are the same thing, 
 then you guessed right!
@@ -1567,8 +1567,8 @@ then you guessed right!
 The value we give `args` is a collection of all the arguments. To get this, 
 Rust gives us a standard library of tools called `std`. From `std`, we are 
 given the `env`, which holds specific environment variables. To get those 
-variables, we use `env`'s member function `args()` to pull them out--then 
-chain the function `collect()` to it--which *collects* the arguments into an 
+variables, we use `env`'s member function `args()` to pull them out—then 
+chain the function `collect()` to it—which *collects* the arguments into an 
 iterable object. 
 
 At this point, `args` is an iterable vector of strings, where each element is 
@@ -1602,7 +1602,7 @@ mutability I want each variable I create to have.
 So if we wanted to access the second element in the `args` vector (which is the 
 name of the Markdown file we are supposed to be passing), we would use `&args[1]` 
 and not `args[1]`, since the former will provide a reference to the data and the 
-latter will trigger a *move* of that value--which we do not want. 
+latter will trigger a *move* of that value—which we do not want. 
 
 Let's go ahead and collect up the arguments in our program. Go to your `main()` 
 function and delete everything in side. Next, let's add our `args` declaration: 
@@ -1692,14 +1692,14 @@ match args.len() {
 }
 ```
 
-At this point, our main function can check whether there are two arguments--the 
+At this point, our main function can check whether there are two arguments—the 
 name of the program (arg 1) and the Markdown file to be parsed (arg 2), and call 
 the appropriate function (`parse_markdown_file()`) if there are only two arguments. 
 
 ## How to pass an argument to a function in Rust
 
 The last thing we need to do in the `main()` function is to pass the second 
-argument into the function that parses the markdown file--`parse_markdown_file()`. 
+argument into the function that parses the markdown file—`parse_markdown_file()`. 
 To do this, we need to change the declaration of `parse_markdown_file()` to 
 accept a single argument: a string slice that is the filename to parse. 
 
@@ -1747,7 +1747,7 @@ match args.len() {
 Notice how we access the 2nd element of `args` the same way we might do it in 
 other languages. Also note that we are using the reference operator here; we 
 don't want to pass `args[1]` in, since that would *move* the value into the 
-function--causing `args[1]` to be null. *Remember: in Rust, assignment is a 
+function—causing `args[1]` to be null. *Remember: in Rust, assignment is a 
 move, not a copy!*
 
 Go ahead and build and run your project: `cargo run -q`. Here's what mine says:
@@ -1853,7 +1853,7 @@ of the ways it does this is by providing the `Path` module, which helps format
 strings and string slices into OS-specific path types. The official Rust docs 
 recommend to use a `Path` variable instead of a string slice anytime you're 
 working with filenames. This is one of several special tools from Rust that 
-comes from Rust's `std` library--which, for the purposes of this tutorial, you 
+comes from Rust's `std` library—which, for the purposes of this tutorial, you 
 can think of as like a namespace. 
 
 In Rust, we can tell our program that we want to use `Path` objects by going to 
@@ -1920,7 +1920,7 @@ thus returned an `Err()`). It's akin to exception handling in other languages,
 except here it's baked into the function itself. 
 
 What the `.expect()` does is tell Rust to unwrap the return value and pass along 
-the `Ok()`--except upon failure, in which case we output the string argument to 
+the `Ok()`—except upon failure, in which case we output the string argument to 
 except as a kind of error message. 
 
 To help explain this, the following two blocks of code will produce the same 
@@ -1952,7 +1952,7 @@ is because `println!()` doesn't know what to do with a `std::fs::File` type, but
 As you can see, the verbose way requires a lot more of a deep dive into Rust 
 than this tutorial is designed for. For now, the condensed way is good enough 
 to build confidence in using Rust; once confidence is there, you will have 
-plenty of room to confuse yourself with Rust's esoteric way of doing things--
+plenty of room to confuse yourself with Rust's esoteric way of doing things—
 and ultimately become a stronger developer in all languages because of how Rust 
 forces you to think!
 
@@ -2119,7 +2119,7 @@ Perfect: now each *line* buffered into `reader` can be parsed.
 We're not quite ready to read the line yet, though. Remember when we did that 
 condensed and verbose example of `File::open()` because it returned a `Result` 
 object? Well, `line` here is also a `Result` object! So how do we get the value 
-of the line--the actual contents--out? 
+of the line—the actual contents—out? 
 
 You might think we need to use a `match` block, like the verbose example for 
 `File::open()`. While you can do it this way, there's really nothing we care to 
@@ -2205,7 +2205,7 @@ Let's look at the right-hand one piece at a time:
   will convert this `Iterator` into a `Take<char>` object, a special kind of 
   iterator)
 * `.collect()` says, "Now convert everything I have retrieved up to this point 
-  into a `Collection`--something that I can subsequently use--of the type 
+  into a `Collection`—something that I can subsequently use—of the type 
   matching the left-hand variable (which is `Vec<char>`)
 
 It's a lot of steps, but the more you read them from left to right the more 
@@ -2240,12 +2240,12 @@ Remember that `first_char` is a vector that only has one element. To see it,
 we will use the `pop()` method that Rust provides to vectors, which will not 
 return the first character of the line, but rather, an `Option` object. 
 
-Just like `Result`, `Option` is made up of two pieces--but they're called `Some()` 
+Just like `Result`, `Option` is made up of two pieces—but they're called `Some()` 
 and `None()` instead of `Result`'s `Ok()` and `Err()`. 
 
 When you pop and element from a vector in Rust, you will either get *some* value 
 or *none*. We really only care if we are getting *some* character that looks 
-like `#`--or, put another way, `Some('#')`.
+like `#`—or, put another way, `Some('#')`.
 
 The `match` block has the same kind of syntax that you may recall from before, 
 this time with the default case (`_`) and `Some("#")`:
@@ -2265,7 +2265,7 @@ problem and try to come up with what would need to happen algorithmically,
 regardless of which line we are on. 
 
 What do we know about the `#` character? Well, we know it corresponds to a `<h1>` 
-tag--an opening tag for a first-order heading. We also know that these should 
+tag—an opening tag for a first-order heading. We also know that these should 
 not be nested; in no case should a `<h1>` tag be followed by a `<p>` tag, nor 
 should a `<p>` tag be followed by a `<h1>` tag. So the first thing we should do 
 is check whether either of these tags are open. 
@@ -2280,7 +2280,7 @@ We'll first check if the `_ptag` is set, since we don't want to start a new
 heading tag without first closing an open `<p>` tag. 
 
 If it's set, we'll unset it (by marking it `false`), then send a closing `</p>` 
-tag and a newline character to the `output_line` string--which is the string we 
+tag and a newline character to the `output_line` string—which is the string we 
 are creating inside this loop iteration that will be pushed to `tokens` when we 
 are done processing `line_contents`:
 
@@ -2502,7 +2502,7 @@ our output file based on the name of the input file, then write the contents of
 for-loop) to our output file. 
 
 Let's add a quick loop that will iterate over `tokens` and then 
-print out the value of each element--which will give us the resultant HTML that 
+print out the value of each element—which will give us the resultant HTML that 
 will be written to the output file in the next section. 
 
 Try to write a for-loop that iterates over `tokens` and calls `println!()` on 
@@ -2527,7 +2527,7 @@ languages it's often necessary to *close* file pointers. However, Rust will do
 this automagically when `reader` falls out of scope. Thanks, Rust!
 
 We're now ready to put the finishing touches on the `parse_markdown_file()` 
-function--writing our results to a file. 
+function—writing our results to a file. 
 
 ## How to write to a file in Rust
 
@@ -2567,11 +2567,11 @@ characters of a string slice called `example`, we could get them like this:
 `&example[3..]`
 
 Likewise, if we wanted to get all *but* the last three characters, you might think 
-we could do it like this--`&example[..-3]`--but this is *incorrect*. In Rust, 
+we could do it like this—`&example[..-3]`—but this is *incorrect*. In Rust, 
 the bracket notation for string slices must be an unsigned integer that is equal to 
 or less than the length of the string slice. 
 
-If we think about our intent with this code (`[..-3]`--which, again, is NOT valid 
+If we think about our intent with this code (`[..-3]`—which, again, is NOT valid 
 Rust syntax), we are basically asking for the entire length of the slice minus 
 the last three characters. Since Rust cannot infer that this is what we want, 
 we can explicitly tell it how many characters to use by passing it the length 
@@ -2650,10 +2650,10 @@ stuffs it into the output file. Neat!
 Remember that we borrow a reference to the `tokens` vector (like this: `&tokens`) 
 because of Rust's ownership rules. If we didn't include that `&`, the value of 
 each element in `tokens` would be passed into the for-loop and removed from 
-outside it--and we don't want that!
+outside it—and we don't want that!
 
 Remember, too, that `outfile` will automatically be closed once it falls out of 
-scope--which will be the at end of the `parse_markdown_file()` function. 
+scope—which will be the at end of the `parse_markdown_file()` function. 
 
 Now that we have finished writing the `tokens` vector to the output file, let's 
 add some helpful output to let the user know that the parsing is finished: 
@@ -2709,7 +2709,7 @@ Markdown compiler. We developed confidence in opening a file, reading and
 parsing that file one line at a time, then writing to a file. We also took a 
 deep dive into the basics of logical thinking for a very simple compiler. Now 
 that the tool is finished, it's time to use Cargo to build a release version 
-of tinymd--which we are going to do in the next and final chapter of this 
+of tinymd—which we are going to do in the next and final chapter of this 
 tutorial. 
 
 {{<checkpoint 
@@ -2788,7 +2788,7 @@ or [fill out this form](https://forms.gle/VbDtvbep1z276Ei68). Thank you so much!
 
 ## Where to go from here
 
-This tutorial was *not* an exhaustive introduction to Rust--but I do hope that 
+This tutorial was *not* an exhaustive introduction to Rust—but I do hope that 
 you have more confidence with Rust to tackle greater challenges. 
 
 As far as our tiny Markdown compiler, I've added some challenges below for you 
@@ -2818,7 +2818,7 @@ great place to start.
   error-handing](https://thefeedbackloop.xyz/stroustrups-rule-and-layering-over-time/) 
   by updating parts of the code we wrote to manually unwrap Result objects.
 
-* This tutorial hasn't even touched on one of the coolest parts of Cargo--integrated 
+* This tutorial hasn't even touched on one of the coolest parts of Cargo—integrated 
   testing built right into the ecosystem! Challenge yourself to use some TDD 
   practices on your next tinker project in Rust.
 
