@@ -166,7 +166,7 @@ You will excel in this tutorial if you:
 
 ![](/images/tinymd2.png)
 
-Rust's main attractor to me is that I can have all the control of a lower-level 
+The main reason Rust was attractive to me was that I can have all the control of a lower-level 
 language like C with some of the more expressive elements and memory safety of a
  higher-level language. It's almost like a whole new way of thinking about 
  software engineering problems. In fact, the way Rust handles variable 
@@ -175,21 +175,21 @@ language like C with some of the more expressive elements and memory safety of a
 
 ![](/images/tinymd3.png)
 
-Well, just like how Common Core came in and revamped the way we teach Math, 
+Just like how Common Core came in and revamped the way we teach Math, 
 there are people who are very (and sometimes toxically) critical of how Rust 
-forces us to think differently about things. But every language has pros and 
+forces us to think differently about things. However, every language has pros and 
 cons, and it's really up to you to figure out which one makes the most sense 
 given what you're building and how you like to mentally model your problems. 
 
-I recommend that you don't fall down these "Is Rust Better Than" or "Rust Sucks 
+I recommend that you don't fall down one of these "Is Rust Better Than" or "Rust Sucks 
 Because" rabbit holes. We're all engineers, and engineers use tools. We should 
 welcome new ways to think about the problems we've been solving for years and 
 years, because eventually we're going to find better ways of solving them. 
 
 ![](/images/tinymd4.png)
 
-Form your own opinions. Tools are supposed to be fun engaging, not talking 
-points for mudslinging. 
+Form your own opinions. Tools are supposed to be fun and engaging, not talking 
+points for mudslinging.
 
 {{% /deepdive %}}
 
@@ -198,8 +198,8 @@ points for mudslinging.
 My tutorial series is designed differently than anything else I've seen about 
 Rust. Being an autodidact, I wrote these tutorials in a way that would have 
 helped give me the foundational confidence that I never got reading traditional 
-books and popular introductory tutorials online. Rust requires a different 
-mindset, yes, but I don't think we as Rust teachers should be frontloading all 
+books and popular introductory tutorials online. Although Rust requires a different 
+mindset, I don't think we as Rust teachers should be frontloading all 
 of Rust's esotericities into tutorials meant to gently introduce someone into 
 the language.
 
@@ -209,10 +209,10 @@ requisite thinking paradigms by **diving in and building tools**. Rust is, after
 all, a systems language, and toolbuilding is a great way to dive into practical 
 application. On top of that, having a parallel objective (building a tiny 
 markdown compiler) that is easy to understand provides some foundational 
-confidence in what we're learning and applying. 
+confidence in what we're learning and applying.
 
 It's a unique way to learn Rust, that's for sure, and it's the way I wish I 
-could have learned it. 
+could have learned it.
 
 That being said, this course *is not* meant to get you up and running with Rust 
 per se; the problem that I have seen with newcomers to Rust is that there is 
@@ -347,7 +347,7 @@ batteries-included tools to help developers write more fluid and legible code,
 and you can think of them as like super functions for now.
 
 I personally don't like that new Rust programmers have to deal with macros
-from the start, but this is just one of the ways Rust really is a unique 
+from the start, but this is just one of the ways Rust really provides a unique 
 programming experience. 
 
 {{% /deepdive %}}
@@ -373,8 +373,8 @@ build (in a paradigm where you have either Debug or Release builds).
 
 The default `cargo build` is perfectly fine for learning Rust, and will be the 
 way we build all our Rust projects. It takes care of dependency management 
-checking and interfaces the compiler (`rustc`) for us so that we can have a
-one stop shop for working with our code. 
+checking and interfaces the actual compiler (`rustc`) for us so that we can have a
+one stop shop for working with our code.
 
 At this point, you should see a new directory called `target` in your project's
 root directory. It was created by using the `cargo build` command's default 
